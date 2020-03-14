@@ -1,0 +1,107 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50%, 1fr));
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 100%;
+  }
+}
+
+.container {
+  width: 480px;
+  max-width: 96%;
+  margin: 10px auto;
+  filter: drop-shadow(0px 0px 3px #ccc);
+  cursor: pointer;
+  display: grid;
+  grid-template-areas: "img";
+}
+
+.container.active {
+  cursor: move;
+}
+
+.js-comparator--2 {
+  --x-2: 50%;
+}
+
+.js-comparator--3 {
+  --x-2: 50%;
+  --y-2: 50%;
+}
+
+.js-comparator--4 {
+  --x-2: 50%;
+  --y-2: 50%;
+}
+
+.bg {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: inherit;
+  max-width: inherit;
+  grid-area: img;
+  padding-top: 110%;
+  margin: auto;
+}
+
+.bg--small {
+  padding-top: 90%;
+}
+
+.bg--2-left {
+  clip-path: polygon(0 0, var(--x-2) 0, var(--x-2) 100%, 0 100%);
+}
+
+.bg--2-right {
+  clip-path: polygon(var(--x-2) 0, 100% 0, 100% 100%, var(--x-2) 100%);
+}
+
+.bg--3-top {
+  clip-path: polygon(0 0, 100% 0, 100% var(--y-2), 0 var(--y-2));
+}
+
+.bg--3-left {
+  clip-path: polygon(0 var(--y-2), var(--x-2) var(--y-2), var(--x-2) 100%, 0 100%);
+}
+
+.bg--3-right {
+  clip-path: polygon(100% var(--y-2), var(--x-2) var(--y-2), var(--x-2) 100%, 100% 100%);
+}
+
+.bg--4-tri-top {
+  clip-path: polygon(var(--x-2) var(--y-2), 100% 0, 0 0);
+}
+
+.bg--4-tri-right {
+  clip-path: polygon(var(--x-2) var(--y-2), 100% 100%, 100% 0);
+}
+
+.bg--4-tri-bottom {
+  clip-path: polygon(var(--x-2) var(--y-2), 0% 100%, 100% 100%);
+}
+
+.bg--4-tri-left {
+  clip-path: polygon(var(--x-2) var(--y-2), 0 0, 0 100%);
+}
+
+.bg--4-rec-top-left {
+  clip-path: polygon(0 0, var(--x-2) 0, var(--x-2) var(--y-2), 0 var(--y-2));
+}
+
+.bg--4-rec-top-right {
+  clip-path: polygon(100% 0, var(--x-2) 0, var(--x-2) var(--y-2), 100% var(--y-2));
+}
+
+.bg--4-rec-bottom-left {
+  clip-path: polygon(var(--x-2) var(--y-2), 0 var(--y-2), 0 100%, var(--x-2) 100%);
+}
+
+.bg--4-rec-bottom-right {
+  clip-path: polygon(var(--x-2) var(--y-2), 100% var(--y-2), 100% 100%, var(--x-2) 100%);
+}
