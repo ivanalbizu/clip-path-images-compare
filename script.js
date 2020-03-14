@@ -26,7 +26,7 @@ const coord = () => {
   const localX = viewportX - boxRectangle.left;
   const localY = viewportY - boxRectangle.top;
 
-  event.target.closest('.js-comparator').style.setProperty('--x-2', `${localX}px`);
-  event.target.closest('.js-comparator').style.setProperty('--y-2', `${localY}px`);
-
+  const container = event.target.closest('.js-comparator');
+  container.style.setProperty('--x-2', `${localX}px`);
+  container.style.setProperty('--y-2', `${localY}px`);
 }
