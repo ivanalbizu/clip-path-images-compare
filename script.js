@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  let boxes = document.querySelectorAll('.js-comparator');
+  const boxes = document.querySelectorAll('.js-comparator');
   boxes.forEach(box => {
-    box.addEventListener('click', handlerComparator, false)
+    box.addEventListener('click', handleComparator, false)
   });
 
 });
 
-const handlerComparator = () => {
+const handleComparator = () => {
   const container = event.target.closest('.js-comparator');
   if (!container.classList.contains('active')) {
     container.classList.add('active')
@@ -19,12 +19,12 @@ const handlerComparator = () => {
 }
 
 const coord = el => {
-  let viewportX = el.clientX;
-  let viewportY = el.clientY;
+  const viewportX = el.clientX;
+  const viewportY = el.clientY;
 
-  let boxRectangle = el.target.getBoundingClientRect();
-  let localX = viewportX - boxRectangle.left;
-  let localY = viewportY - boxRectangle.top;
+  const boxRectangle = el.target.getBoundingClientRect();
+  const localX = viewportX - boxRectangle.left;
+  const localY = viewportY - boxRectangle.top;
 
   el.target.closest('.js-comparator').style.setProperty('--x-2', `${localX}px`);
   el.target.closest('.js-comparator').style.setProperty('--y-2', `${localY}px`);
