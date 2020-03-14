@@ -18,15 +18,15 @@ const handleComparator = () => {
   }
 }
 
-const coord = el => {
-  const viewportX = el.clientX;
-  const viewportY = el.clientY;
+const coord = () => {
+  const viewportX = event.clientX;
+  const viewportY = event.clientY;
 
-  const boxRectangle = el.target.getBoundingClientRect();
+  const boxRectangle = event.target.getBoundingClientRect();
   const localX = viewportX - boxRectangle.left;
   const localY = viewportY - boxRectangle.top;
 
-  el.target.closest('.js-comparator').style.setProperty('--x-2', `${localX}px`);
-  el.target.closest('.js-comparator').style.setProperty('--y-2', `${localY}px`);
+  event.target.closest('.js-comparator').style.setProperty('--x-2', `${localX}px`);
+  event.target.closest('.js-comparator').style.setProperty('--y-2', `${localY}px`);
 
 }
