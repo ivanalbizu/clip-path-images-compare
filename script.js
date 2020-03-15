@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const boxes = document.querySelectorAll('.js-comparator');
-  boxes.forEach(box => {
-    box.addEventListener('click', handleComparator, false)
-  });
+  boxes.forEach(box => box.addEventListener('click', handleComparator, false) );
 
 });
 
@@ -27,6 +25,6 @@ const coord = () => {
   const localY = viewportY - boxRectangle.top;
 
   const container = event.target.closest('.js-comparator');
-  container.style.setProperty('--x-2', `${localX}px`);
-  container.style.setProperty('--y-2', `${localY}px`);
+  container.style.setProperty('--x', `${localX}px`);
+  container.style.setProperty('--y', `${localY}px`);
 }
